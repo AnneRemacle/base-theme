@@ -1,3 +1,10 @@
 /node-modules
 .gitignore
 sources
+README.md
+webpack.mix.js
+yarn.lock
+package.json
+LICENSE
+.eslintrc
+.stylelintrc.json
