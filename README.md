@@ -23,8 +23,23 @@ Cloner ou télécharger ce repo, changer le nom en quelque chose d'autre puis su
 6. Rechercher `BASE_THEME_` (en majuscule) pour trouver les constantes et remplacer avec: `NOUVEAU_THEME`.
 
 
-### Setup
+##Sass
+[Documentation](https://sass-lang.com/)
 
+##Arborescence des dossiers sources
 
+	sources
+		-- sass
+			-- base
+			-- components
+			-- generic
+			-- settings
+			-- tools
+			-- styles.scss
+		-- js
+			-- components
+			-- main.js
 
-### Available CLI commands
+Export dans le dossier build
+
+[Norme rsscss](https://rscss.io/index.html) pour le nommage des classes
