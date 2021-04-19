@@ -18,7 +18,7 @@ Cloner ou télécharger ce repo, changer le nom en quelque chose d'autre puis su
 1. Rechercher `'base-theme'` (entre guillements simples) pour trouver le text-domain et le remplacer par le nouveau.
 2. Rechercher `base_theme_` pour trouver les noms de fonctions et les remplacer par le nouveau thème.
 3. Rechercher `Text Domain: base-theme` dans `style.css` et remplacer avec: `Text Domain: [nouveau-theme]`.
-4. Search for <code>&nbsp;base_theme</code> (avec un espace avant) pour trouver les DocBlocks et remplacer avec: <code>&nbsp;[nouveau-theme]</code>.
+4. Rechercher <code>&nbsp;base_theme</code> (avec un espace avant) pour trouver les DocBlocks et remplacer avec: <code>&nbsp;[nouveau-theme]</code>.
 5. Rechercher `base_theme-` pour trouver les préfixes et remplacer avec: `nouveau-theme-`.
 6. Rechercher `BASE_THEME_` (en majuscule) pour trouver les constantes et remplacer avec: `NOUVEAU_THEME`.
 
