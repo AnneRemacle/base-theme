@@ -18,9 +18,9 @@ if( function_exists('acf_add_options_page') ) {
 
 }
 
-if ( ! defined( '_S_VERSION' ) ) {
+if ( ! defined( 'base_theme_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( 'base_theme_VERSION', '1.0.0' );
 }
 
 if ( ! function_exists( 'base_theme_setup' ) ) :
@@ -152,7 +152,7 @@ add_action( 'widgets_init', 'base_theme_widgets_init' );
  */
 function base_theme_scripts() {
 	wp_enqueue_style( 'swiperstyles', 'https://unpkg.com/swiper/swiper-bundle.min.css', array(), "1.0.0", "all" );
-	wp_enqueue_style( 'fancyboxcss', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css', array(), "1.0.0", "all" );
+	wp_enqueue_style( 'fancyboxcss', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css', array(), "1.0.0", "all" );
 	wp_enqueue_style( 'slickcss', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', array(), "1.0.0", "all" );
 	wp_enqueue_style( 'customstyle', get_template_directory_uri() . '/build/styles.min.css', array(), "1.0.0", "all" );
 
@@ -161,7 +161,7 @@ function base_theme_scripts() {
 	wp_enqueue_script( 'fontawesome', 'https://kit.fontawesome.com/108217eec9.js', array('jquery'), "1.0.0", true );
 	wp_enqueue_script( 'select2', 'https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js', array('jquery'), "1.0.0", true );
 	wp_enqueue_script( 'inview', 'https://unpkg.com/in-view@0.6.1/dist/in-view.min.js', array('jquery'), "1.0.0", true );
-	wp_enqueue_script( 'fancybox', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', array('jquery'), "1.0.0", true );
+	wp_enqueue_script( 'fancybox', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js', array('jquery'), "1.0.0", true );
 	wp_enqueue_script( 'cookies', 'https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js', array('jquery'), "1.0.0", true );
 	wp_enqueue_script( 'isotope', 'https://npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js', array('jquery'), "1.0.0", true );
 
