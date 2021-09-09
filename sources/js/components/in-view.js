@@ -1,70 +1,50 @@
 export default function() {
-    (function($) {
-        $( '.home-slider .content' ).addClass( 'invisible' );
-        $( '.from-left' ).addClass( 'invisible' );
-        $( '.from-right' ).addClass( 'invisible' );
-        $( '.from-bottom' ).addClass( 'invisible' );
-        $( '.from-top' ).addClass( 'invisible' );
-        // $( '.slider-textimage .content' ).addClass( 'invisible' );
-        // $( '.slider-textimage .image-container' ).addClass( 'invisible' );
+    if (document.querySelector( '.home-slider .content' )) {
+        document.querySelector( '.home-slider .content' ).classList.add( 'invisible' );
+    }
+    if (document.querySelector( '.from-left' )) {
+        document.querySelector( '.from-left' ).classList.add( 'invisible' );
+    }
+    if (document.querySelector( '.from-right' )) {
+        document.querySelector( '.from-right' ).classList.add( 'invisible' );
+    }
+    if (document.querySelector( '.from-top' )) {
+        document.querySelector( '.from-top' ).classList.add( 'invisible' );
+    }
+    if (document.querySelector( '.from-bottom' )) {
+        document.querySelector( '.from-bottom' ).classList.add( 'invisible' );
+    }
 
-        $(document).ready(function(){
-            // inView('.slider-textimage .content').on('enter', function(el) {
-            //     $(el).removeClass("invisible");
-            //     $(el).addClass("is-animate");
-            // });
-            //
-            // inView('.slider-textimage .image-container').on('enter', function(el) {
-            //     $(el).removeClass("invisible");
-            //     $(el).addClass("is-animate");
-            // });
+    inView('.blocktext-imagelarge .image-container').on('enter', function(el) {
+        document.querySelector('.blocktext-imagelarge').classList.add("visible");
+    });
 
-            inView('.home-slider .content').on('enter', function(el) {
-                $(el).removeClass("invisible");
-                $(el).addClass("is-animate");
-            });
+    inView('.blocktext-imagelarge .content').on('enter', el => {
+        el.classList.add("visible");
+    });
 
-            inView('.from-left').on('enter', function(el) {
-                $(el).removeClass("invisible");
-                $(el).addClass("fade-in-left");
-            });
+    inView('.home-slider .content').on('enter', function(el) {
+        el.classList.remove("invisible");
+        el.classList.add("is-animate");
+    });
 
-            inView('.from-right').on('enter', function(el) {
-                $(el).removeClass("invisible");
-                $(el).addClass("fade-in-right");
-            });
+    inView('.from-left').on('enter', el => {
+        el.classList.remove("invisible");
+        el.classList.add("fade-in-left");
+    });
 
-            inView('.from-bottom').on('enter', function(el) {
-                $(el).removeClass("invisible");
-                $(el).addClass("fade-in-bottom");
-            });
+    inView('.from-right').on('enter', el => {
+        el.classList.remove("invisible");
+        el.classList.add("fade-in-right");
+    });
 
-            inView('.from-top').on('enter', function(el) {
-                $(el).removeClass("invisible");
-                $(el).addClass("fade-in-top");
-            });
+    inView('.from-bottom').on('enter', el => {
+        el.classList.remove("invisible");
+        el.classList.add("fade-in-bottom");
+    });
 
-            var steps = $( '.step' );
-
-            $(window).on( 'scroll', function() {
-                if ($('body').hasClass("page-template-about")) {
-                    var topblock = $('.steps-container').offset().top - 600;
-                    var scroll = $(window).scrollTop();
-                    var maxscroll = $('.steps-container').innerHeight();
-                    var percent = (scroll - topblock) / maxscroll * 100;
-                    var top = percent+'%';
-
-                    if( scroll >= topblock && scroll <= maxscroll ) {
-                        inView.offset(300);
-                    }
-                }
-            } );
-    		inView('.step').on('enter', function(el) {
-    			$(el).addClass("active")
-    		}).on('exit', function(el) {
-    			$(el).removeClass('active')
-    		});
-        })
-    })(jQuery);
-
+    inView('.from-top').on('enter', el => {
+        el.classList.remove("invisible");
+        el.classList.add("fade-in-top");
+    });
 }
