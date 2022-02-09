@@ -61,7 +61,8 @@ if ( ! function_exists( 'base_theme_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'base-theme' ),
+				'header' => esc_html__( 'Header', 'base-theme' ),
+				'footer' => esc_html__( 'Footer', 'base-theme' ),
 			)
 		);
 
@@ -151,13 +152,13 @@ add_action( 'widgets_init', 'base_theme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function base_theme_scripts() {
-	wp_enqueue_style( 'swiperstyles', 'https://unpkg.com/swiper/swiper-bundle.min.css', array(), "1.0.0", "all" );
+	wp_enqueue_style( 'swiperstyles', 'https://unpkg.com/swiper@8/swiper-bundle.min.css', array(), "1.0.0", "all" );
 	wp_enqueue_style( 'fancyboxcss', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css', array(), "1.0.0", "all" );
-	wp_enqueue_style( 'slickcss', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', array(), "1.0.0", "all" );
+	wp_enqueue_style( 'tailwind', 'https://cdn.tailwindcss.com', array(), "1.0.0", "all" );
 	wp_enqueue_style( 'customstyle', get_template_directory_uri() . '/build/styles.min.css', array(), "1.0.0", "all" );
 
 	wp_enqueue_script( 'jquery', 'https://code.jquery.com/jquery-3.5.1.min.js', array(), "1.0.0", true );
-	wp_enqueue_script( 'swiper', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js', array('jquery'), "1.0.0", true );
+	wp_enqueue_script( 'swiper', 'https://unpkg.com/swiper@8/swiper-bundle.min.js', array('jquery'), "1.0.0", true );
 	wp_enqueue_script( 'fontawesome', 'https://kit.fontawesome.com/108217eec9.js', array('jquery'), "1.0.0", true );
 	wp_enqueue_script( 'select2', 'https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js', array('jquery'), "1.0.0", true );
 	wp_enqueue_script( 'inview', 'https://unpkg.com/in-view@0.6.1/dist/in-view.min.js', array('jquery'), "1.0.0", true );
